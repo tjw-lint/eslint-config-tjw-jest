@@ -14,3 +14,10 @@ The Jared Wilcurt's Jest ESLint rules
       ]
     };
     ```
+
+* * *
+
+**See also:**
+
+* [eslint-config-tjw-base](https://github.com/tjw-lint/eslint-config-tjw-base)
+* [eslint-config-tjw-vue](https://github.com/tjw-lint/eslint-config-tjw-vue)
