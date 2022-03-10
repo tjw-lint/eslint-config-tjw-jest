@@ -11,8 +11,9 @@
     "lint"
   ],
   "dependencies": {
-    "babel-jest": "^24.9.0",
-    "eslint-plugin-jest": "^22.17.0"
+    "@babel/eslint-parser": "^7.17.0",
+    "eslint": "^8.10.0",
+    "eslint-plugin-jest": "^26.1.1"
   },
   "repository": {
     "type": "git",
