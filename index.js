@@ -1,23 +1,40 @@
 // Jest Linter Options
 module.exports = {
-  'parserOptions': {
-    'parser': 'babel-eslint',
-    'ecmaVersion': 8,
-    'sourceType': 'module'
+  parserOptions: {
+    parser: '@babel/eslint-parser',
+    ecmaVersion: 2022,
+    sourceType: 'module'
   },
-  'env': {
-    'browser': true,
-    'node': true
+  env: {
+    browser: true,
+    jest: true,
+    node: true
   },
-  'globals': {
-    'jsdom': true,
-    'Promise': true
+  globals: {
+    jsdom: true,
+    Promise: true
   },
-  'extends': [
+  extends: [
     'plugin:jest/recommended'
   ],
-  'plugins': [
+  plugins: [
     'jest'
   ],
-  rules: {}
+  rules: {
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'CallExpression[callee.name="it"]',
+        message: 'Use "test" instead of "it"'
+      },
+      {
+        selector: 'MemberExpression[object.callee.name="expect"][property.name="toBe"]',
+        message: 'Prefer .toEqual over .toBe'
+      },
+      {
+        selector: 'Identifier[name="toBe"]',
+        message: 'Prefer .toEqual over .toBe'
+      }
+    ]
+  }
 };
