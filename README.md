@@ -15,6 +15,26 @@ The Jared Wilcurt's Jest ESLint rules
     };
     ```
 
+If you already have a `no-restricted-syntax` rule, you can merge the ones that come with this config with your own, like so:
+
+```js
+// .eslintrc.js
+const jestRestrictedSyntax = require('eslint-config-tjw-jest/no-restricted-syntax.json');
+
+module.exports = {
+  extends: [
+    'tjw-jest'
+  ],
+  rules: {
+    'no-restricted-syntax': [
+      'error',
+      ...jestRestrictedSyntax,
+      // your custom rules
+    ]
+  }
+};
+```
+
 
 * * *
 
