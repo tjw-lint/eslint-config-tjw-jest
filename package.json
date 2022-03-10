@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-tjw-jest",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "description": "The Jared Wilcurt's Jest Linting rules",
   "author": "The Jared Wilcurt",
