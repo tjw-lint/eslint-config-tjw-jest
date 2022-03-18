@@ -39,6 +39,31 @@ module.exports = {
 * * *
 
 
+Custom rules:
+
+```js
+module.exports = {
+  extends: [
+    'tjw-jest'
+  ],
+  rules: {
+    'capitalize-test-names': 'error',
+    'newline-before-expect-assertion': 'error',
+    'test-names-avoid-should': 'error'
+  }
+};
+```
+```json
+{
+  "scripts": {
+    "lint": "eslint --rulesdir=./node_modules/eslint-config-tjw-jest/custom-eslint-rules"
+  }
+}
+```
+
+* * *
+
+
 **See also:**
 
 * [eslint-config-tjw-base](https://github.com/tjw-lint/eslint-config-tjw-base)
