@@ -1,6 +1,6 @@
 # eslint-config-tjw-jest
 
-The Jared Wilcurt's Jest ESLint rules
+The Jared Wilcurt's Jest/Vitest ESLint rules
 
 
 ## Using this
