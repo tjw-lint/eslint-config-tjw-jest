@@ -1,6 +1,7 @@
 {
   "name": "eslint-config-tjw-jest",
   "version": "2.0.0",
+  "type": "module",
   "main": "index.js",
   "description": "The Jared Wilcurt's Jest Linting rules",
   "author": "The Jared Wilcurt",
@@ -11,9 +12,8 @@
     "lint"
   ],
   "dependencies": {
-    "@babel/eslint-parser": "^7.17.0",
-    "eslint": "^8.10.0",
-    "eslint-plugin-jest": "^26.1.1"
+    "eslint": "^9.15.0",
+    "eslint-plugin-jest": "^28.9.0"
   },
   "repository": {
     "type": "git",
