@@ -1,4 +1,4 @@
-[
+export default [
   {
     "selector": "CallExpression[callee.name=\"it\"]",
     "message": "Use \"test\" instead of \"it\""
@@ -11,4 +11,4 @@
     "selector": "Identifier[name=\"toBe\"]",
     "message": "Prefer .toEqual over .toBe"
   }
-]
+];
