@@ -1,11 +1,13 @@
 # eslint-config-tjw-jest
 
-The Jared Wilcurt's Jest/Vitest ESLint rules
+The Jared Wilcurt's Jest/Vitest ESLint rules.
 
 
 ## Using this
 
-1. `npm install --save-dev eslint-config-tjw-jest`
+This assumes you have ESLint 9+ already set up, if not, refer to [this guide](https://github.com/tjw-lint/eslint-config-tjw-base).
+
+1. `npm install --save-dev eslint eslint-plugin-jest eslint-config-tjw-jest`
 1. In your `.eslitrc.js` add `tjw-jest` to your `extends` like so:
     ```js
     module.exports = {
@@ -14,25 +16,38 @@ The Jared Wilcurt's Jest/Vitest ESLint rules
       ]
     };
     ```
+1. In your `eslint.config.js`:
+    ```js
+    import tjwJest from 'eslint-config-tjw-jest';
+
+    export default [
+      ...tjwJest,
+      {
+        // Your project specific settings
+      }
+    ];
+    ```
+
 
 If you already have a `no-restricted-syntax` rule, you can merge the ones that come with this config with your own, like so:
 
 ```js
 // .eslintrc.js
-const jestRestrictedSyntax = require('eslint-config-tjw-jest/no-restricted-syntax.json');
+import tjwJest from 'eslint-config-tjw-jest';
+import jestRestrictedSyntax from 'eslint-config-tjw-jest/no-restricted-syntax.js';
 
-module.exports = {
-  extends: [
-    'tjw-jest'
-  ],
-  rules: {
-    'no-restricted-syntax': [
-      'error',
-      ...jestRestrictedSyntax,
-      // your custom rules
-    ]
+export default [
+  ...tjwJest,
+  {
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        ...jestRestrictedSyntax,
+        // your custom rules
+      ]
+    }
   }
-};
+];
 ```
 
 
@@ -42,14 +57,16 @@ module.exports = {
 Custom rules:
 
 ```js
-module.exports = {
-  extends: [
-    'tjw-jest'
-  ],
-  rules: {
-    'capitalize-test-names': 'error',
-    'newline-before-expect-assertion': 'error',
-    'test-names-avoid-should': 'error'
+import tjwJest from 'eslint-config-tjw-jest';
+
+export default {
+  ...tjwJest,
+  {
+    rules: {
+      'capitalize-test-names': 'error',
+      'newline-before-expect-assertion': 'error',
+      'test-names-avoid-should': 'error'
+    }
   }
 };
 ```

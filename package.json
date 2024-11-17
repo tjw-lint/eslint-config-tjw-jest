@@ -11,9 +11,9 @@
     "eslint",
     "lint"
   ],
-  "dependencies": {
-    "eslint": "^9.15.0",
-    "eslint-plugin-jest": "^28.9.0"
+  "peerDependencies": {
+    "eslint": ">9",
+    "eslint-plugin-jest": ">=28.2.0"
   },
   "repository": {
     "type": "git",
