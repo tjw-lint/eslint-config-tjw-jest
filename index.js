@@ -2,9 +2,16 @@ import pluginJest from 'eslint-plugin-jest';
 
 // Jest Linter Options
 export default [
-  ...pluginJest.configs['flat/recommended'],
+  pluginJest.configs['flat/recommended'],
   {
+    languageOptions: {
+      globals: {
+        vi: true
+      }
+    },
     rules: {
+      // If this is not turned off, linting throws because it can't find 'jest' install
+      'jest/no-deprecated-functions': 'off',
       'no-restricted-syntax': [
         'error',
         {
