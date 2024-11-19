@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-tjw-jest",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "type": "module",
   "main": "index.js",
   "description": "The Jared Wilcurt's Jest Linting rules",
@@ -12,7 +12,7 @@
     "lint"
   ],
   "peerDependencies": {
-    "eslint": ">9",
+    "eslint": "9.x.x",
     "eslint-plugin-jest": ">=28.2.0"
   },
   "repository": {
