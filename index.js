@@ -1,32 +1,37 @@
-import pluginJest from 'eslint-plugin-jest';
+import avoidIt from './rules/avoid-it.js';
+import avoidToBe from './rules/avoid-to-be.js';
+import capitalizeTestNames from './rules/capitalize-test-names.js';
+import newLineBeforeExpectAssertion from './rules/new-line-before-expect-assertion.js';
+import testNamesAvoidShould from './rules/test-names-avoid-should.js';
 
-// Jest Linter Options
-export default [
-  pluginJest.configs['flat/recommended'],
-  {
-    languageOptions: {
-      globals: {
-        vi: true
-      }
+const pluginTjwJest = {
+  meta: {
+    name: 'eslint-plugin-jest-tjw',
+    version: '3.0.0'
+  },
+  configs: {},
+  rules: {
+    'avoid-it': avoidIt,
+    'avoid-to-be': avoidToBe,
+    'capitalize-test-names': capitalizeTestNames,
+    'new-line-before-expect-assertion': newLineBeforeExpectAssertion,
+    'test-names-avoid-should': testNamesAvoidShould
+  }
+};
+
+Object.assign(pluginTjwJest.configs, {
+  recommended: {
+    plugins: {
+      'jest-tjw': pluginTjwJest
     },
     rules: {
-      // If this is not turned off, linting throws because it can't find 'jest' install
-      'jest/no-deprecated-functions': 'off',
-      'no-restricted-syntax': [
-        'error',
-        {
-          selector: 'CallExpression[callee.name="it"]',
-          message: 'Use "test" instead of "it"'
-        },
-        {
-          selector: 'MemberExpression[object.callee.name="expect"][property.name="toBe"]',
-          message: 'Prefer .toEqual over .toBe'
-        },
-        {
-          selector: 'Identifier[name="toBe"]',
-          message: 'Prefer .toEqual over .toBe'
-        }
-      ]
+      'jest-tjw/avoid-it': 'error',
+      'jest-tjw/avoid-to-be': 'error',
+      'jest-tjw/capitalize-test-names': 'error',
+      'jest-tjw/new-line-before-expect-assertion': 'error',
+      'jest-tjw/test-names-avoid-should': 'error'
     }
   }
-];
+});
+
+export default pluginTjwJest;

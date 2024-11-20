@@ -5,6 +5,9 @@
   "main": "index.js",
   "description": "The Jared Wilcurt's Jest Linting rules",
   "author": "The Jared Wilcurt",
+  "scripts": {
+    "lint": "eslint manual-testing.js"
+  },
   "keywords": [
     "tjw",
     "jest",

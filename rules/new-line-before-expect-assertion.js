@@ -1,5 +1,5 @@
 /**
- * @newlineBeforeExpectAssertion Rule to enforce return after expect
+ * @newLineBeforeExpectAssertion Rule to enforce return after expect
  * @author TheJaredWilcurt
  */
 
