@@ -1,5 +1,5 @@
 /**
- * @newlineBeforeExpectAssertion Rule to enforce return after expect
+ * @newLineBeforeExpectAssertion Rule to enforce return after expect
  * @author TheJaredWilcurt
  */
 
@@ -8,7 +8,7 @@
 // ------------------------------------------------------------------------------
 // Rule Definition
 // ------------------------------------------------------------------------------
-module.exports = {
+export default {
   meta: {
     type: 'layout',
     fixable: 'code',
