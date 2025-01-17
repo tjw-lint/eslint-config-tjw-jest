@@ -152,7 +152,6 @@ test('Renders correctly', () => {});
 
 // Bad
 test('Should render correctly', () => {});
-
 ```
 
 
