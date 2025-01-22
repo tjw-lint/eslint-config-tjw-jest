@@ -124,7 +124,7 @@ expect(myFunctionCall(with, these, values)).toEqual(thisOtherValue);
 Rule to enforce writing test names in the style of classic prose using the "active voice".
 
 Most instances of the Passive Voice used in tests starting with "Should" **can be automatically fixed**.
-For example, all the following passive voices would become the displayed active voice alternative.
+For example, all the following passive voices would become the displayed active voice alternative automatically.
 
 Passive voice                | Active voice
 :--                          | :--
@@ -140,7 +140,7 @@ Should render correctly      | Renders correctly
 
 **Benefits:**
 
-* Makes tests names unique (they don't all start witht the same 5 letters and blend together).
+* Makes test names unique (they don't all start with the same 5 letters and blend together).
 * Makes test names more direct and concise.
 * It can [save lives](https://www.youtube.com/watch?v=OV5J6BfToSw&t=22m11s).
 
