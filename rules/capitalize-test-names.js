@@ -8,7 +8,7 @@
 // ------------------------------------------------------------------------------
 // Rule Definition
 // ------------------------------------------------------------------------------
-module.exports = {
+export default {
   meta: {
     type: 'layout',
     fixable: 'code',
@@ -23,9 +23,9 @@ module.exports = {
   create: function (context) {
     return {
       'CallExpression[callee.name="test"]': function (node) {
-        if (node && node.arguments && node.arguments[0] && node.arguments[0].value) {
-          let testName = node.arguments[0].value;
-          if (typeof(testName) === 'string' && testName[0] && testName[0] !== testName[0].toUpperCase()) {
+        const testName = node?.arguments?.[0]?.value;
+        if (testName) {
+          if (typeof(testName) === 'string' && testName[0] !== testName[0].toUpperCase()) {
             context.report({
               node,
               message: 'Uppercase the first letter of the test name',

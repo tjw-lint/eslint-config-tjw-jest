@@ -1,19 +1,22 @@
 {
   "name": "eslint-config-tjw-jest",
-  "version": "2.0.0",
+  "version": "3.0.0",
+  "type": "module",
   "main": "index.js",
   "description": "The Jared Wilcurt's Jest Linting rules",
   "author": "The Jared Wilcurt",
+  "scripts": {
+    "lint": "eslint manual-testing.js"
+  },
   "keywords": [
     "tjw",
     "jest",
     "eslint",
     "lint"
   ],
-  "dependencies": {
-    "@babel/eslint-parser": "^7.17.0",
-    "eslint": "^8.10.0",
-    "eslint-plugin-jest": "^26.1.1"
+  "peerDependencies": {
+    "eslint": ">=9.0.0",
+    "eslint-plugin-jest": ">=28.2.0"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,7 @@
     "url": "https://github.com/tjw-lint/eslint-config-tjw-jest/issues"
   },
   "volta": {
-    "node": "22.11.0"
+    "node": "23.6.1",
+    "npm": "11.0.0"
   }
 }
