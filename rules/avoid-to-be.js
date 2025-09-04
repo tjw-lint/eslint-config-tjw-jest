@@ -27,7 +27,7 @@ export default {
           node,
           message: 'Always use .toEqual(), never use .toBe().',
           fix: function (fixer) {
-            return fixer.replaceTextRange(node.range, 'toEqual');
+            return fixer.replaceTextRange(node.property.range, 'toEqual');
           }
         });
       }

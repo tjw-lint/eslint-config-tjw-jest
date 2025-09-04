@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-tjw-jest",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "module",
   "main": "index.js",
   "description": "The Jared Wilcurt's Jest Linting rules",
@@ -28,7 +28,7 @@
     "url": "https://github.com/tjw-lint/eslint-config-tjw-jest/issues"
   },
   "volta": {
-    "node": "23.6.1",
-    "npm": "11.0.0"
+    "node": "24.7.0",
+    "npm": "11.6.0"
   }
 }
