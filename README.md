@@ -45,7 +45,7 @@ You can set any of these to `'off'` instead of the default `'error'`, to disable
 
 ### Avoid ".toBe()"
 
-**Error prevention rule:** Enforces using `.toEqual` instead of the [error-proned](https://dev.to/thejaredwilcurt/why-you-should-never-use-tobe-in-jest-48ca) `.toBe` assertion.
+**Error prevention rule:** Enforces using `.toEqual` instead of the [error-proned](https://github.com/TheJaredWilcurt/blog/discussions/9) `.toBe` assertion.
 
 ```js
 /* 'jest-tjw/avoid-to-be': 'error' */
