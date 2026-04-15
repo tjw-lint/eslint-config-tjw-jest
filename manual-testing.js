@@ -3,8 +3,14 @@
 test();
 
 describe('qawer', () => {
-  test('Wqer', () => {
-    expect('asdf')
-      .toEqual(2);
+  test('lowercase', () => {
+    expect('asdf').toBe(2);
+  });
+
+  test('Should render', () => {
+    expect('a')
+      .toMatchInlineSnapshot(`
+        'a'
+      `);
   });
 });
