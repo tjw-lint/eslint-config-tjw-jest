@@ -7,7 +7,14 @@ describe('qawer', () => {
     expect('asdf').toBe(2);
   });
 
-  test('Should render', () => {
+  test('Should render correctly', () => {
+    expect('a')
+      .toMatchInlineSnapshot(`
+        'a'
+      `);
+  });
+
+  it('Should render', () => {
     expect('a')
       .toMatchInlineSnapshot(`
         'a'
