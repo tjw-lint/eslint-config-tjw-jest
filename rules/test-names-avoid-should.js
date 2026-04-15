@@ -5,13 +5,13 @@
 
 'use strict';
 
-function detectShouldInTestNamesCurry (context) {
+function detectShouldInTestNames (context) {
   /**
    * Detects, reports, and fixes usage of "should" in test names.
    *
    * @param {object} node ESLint AST Node
    */
-  function detectShouldInTestNames (node) {
+  return function (node) {
     if (
       node &&
       node.arguments &&
@@ -87,8 +87,7 @@ function detectShouldInTestNamesCurry (context) {
         });
       }
     }
-  }
-  return detectShouldInTestNames;
+  };
 }
 
 /*
@@ -126,8 +125,8 @@ export default {
   },
   create: function (context) {
     return {
-      'CallExpression[callee.name="it"]': detectShouldInTestNamesCurry(context),
-      'CallExpression[callee.name="test"]': detectShouldInTestNamesCurry(context)
+      'CallExpression[callee.name="it"]': detectShouldInTestNames(context),
+      'CallExpression[callee.name="test"]': detectShouldInTestNames(context)
     };
   }
 };
