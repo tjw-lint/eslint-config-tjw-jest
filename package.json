@@ -27,8 +27,14 @@
   "bugs": {
     "url": "https://github.com/tjw-lint/eslint-config-tjw-jest/issues"
   },
-  "volta": {
-    "node": "24.7.0",
-    "npm": "11.6.0"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "25.9.0"
+    },
+    "packageManager": {
+      "name": "npm",
+      "version": "11.12.1"
+    }
   }
 }
