@@ -5,7 +5,7 @@ The Jared Wilcurt's Jest/Vitest ESLint rules.
 
 ## Using this
 
-This assumes you have ESLint 9+ already set up, if not, refer to [this guide](https://github.com/tjw-lint/eslint-config-tjw-base).
+This assumes you have ESLint 10+ already set up, if not, refer to [this guide](https://github.com/tjw-lint/eslint-config-tjw-base).
 
 1. `npm install --save-dev eslint eslint-plugin-jest eslint-config-tjw-jest`
 1. In your `eslint.config.js`:
