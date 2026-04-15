@@ -20,7 +20,7 @@ export default {
     }
   },
   create: function (context) {
-    const sourceCode = context.getSourceCode();
+    const sourceCode = context.sourceCode;
     return {
       'MemberExpression[object.callee.name="expect"]': function (node) {
         const expectCallLastParenToken = sourceCode.getLastToken(node.object);

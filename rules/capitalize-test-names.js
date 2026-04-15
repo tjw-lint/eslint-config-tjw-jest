@@ -5,6 +5,29 @@
 
 'use strict';
 
+function detectLowercaseTestNames (context) {
+  /**
+   * Detects, reports, and fixes test names starting with a lowercase letter.
+   *
+   * @param {object} node ESLint AST Node
+   */
+  return function (node) {
+    const testName = node?.arguments?.[0]?.value;
+    if (testName) {
+      if (typeof(testName) === 'string' && testName[0] !== testName[0].toUpperCase()) {
+        context.report({
+          node,
+          message: 'Uppercase the first letter of the test name',
+          fix: function (fixer) {
+            let capitalized = '\'' + testName[0].toUpperCase() + testName.slice(1) + '\'';
+            return fixer.replaceText(node.arguments[0], capitalized);
+          }
+        });
+      }
+    }
+  };
+}
+
 // ------------------------------------------------------------------------------
 // Rule Definition
 // ------------------------------------------------------------------------------
@@ -22,21 +45,8 @@ export default {
   },
   create: function (context) {
     return {
-      'CallExpression[callee.name="test"]': function (node) {
-        const testName = node?.arguments?.[0]?.value;
-        if (testName) {
-          if (typeof(testName) === 'string' && testName[0] !== testName[0].toUpperCase()) {
-            context.report({
-              node,
-              message: 'Uppercase the first letter of the test name',
-              fix: function (fixer) {
-                let capitalized = '\'' + testName[0].toUpperCase() + testName.slice(1) + '\'';
-                return fixer.replaceText(node.arguments[0], capitalized);
-              }
-            });
-          }
-        }
-      }
+      'CallExpression[callee.name="it"]': detectLowercaseTestNames(context),
+      'CallExpression[callee.name="test"]': detectLowercaseTestNames(context)
     };
   }
 };
