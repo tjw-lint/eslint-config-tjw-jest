@@ -8,6 +8,9 @@ The Jared Wilcurt's Jest/Vitest ESLint rules.
 This assumes you have ESLint 10+ already set up, if not, refer to [this guide](https://github.com/tjw-lint/eslint-config-tjw-base).
 
 1. `npm install --save-dev eslint eslint-plugin-jest eslint-config-tjw-jest`
+   * **Requires:**
+      * `eslint` >=10.0.0
+      * `eslint-plugin-jest` >=29.13.0
 1. In your `eslint.config.js`:
     ```js
     import pluginJest from 'eslint-plugin-jest';
