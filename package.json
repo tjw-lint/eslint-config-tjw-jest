@@ -14,7 +14,11 @@
     "eslint",
     "lint"
   ],
-  "peerDependencies": {
+  "ManifestComments": [
+    "I've commented out the peerDependencies so they do not impact users of the library doing npm audit",
+    "However they still exist here to be uncommented for npm run lint testing in the future"
+  ],
+  "// peerDependencies": {
     "eslint": ">=10.0.0",
     "eslint-plugin-jest": ">=29.13.0"
   },
@@ -30,11 +34,11 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "25.9.0"
+      "version": "26.13.0"
     },
     "packageManager": {
       "name": "npm",
-      "version": "11.12.1"
+      "version": "12.2.2"
     }
   }
 }
